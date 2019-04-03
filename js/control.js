@@ -13,28 +13,28 @@ $(document).ready(function(){
 
 
     $('#oldStuff1').on('click',function(){
-        window.open('http://www.lightsandperfections.net/DEV_PROJECTS/MUSIC3D/Music3D.swf','Broke City','width=900,height=450');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/BrokeCityPlayer/Music3D.swf','Broke City','width=900,height=450');
     });
     $('#oldStuff2').on('click',function(){
-        window.open('http://www.lightsandperfections.net/DEV_PROJECTS/Audax/','Audax Capacitor','width=500,height=450');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/Audax/index.html','Audax Capacitor','width=500,height=450');
     });
     $('#oldStuff3').on('click',function(){
         window.open('http://www.miltonwsanders.net/','MWS');
     });
     $('#oldStuff4').on('click',function(){
-        window.open('http://www.lightsandperfections.net/fileRep/FB4_projects/persProjects/AircraftStrategyGame/bin-debug/AircraftStrategyGame.html','AirWar');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/AircraftStrategy/AircraftStrategyGame.html','AirWar');
     });
     $('#oldStuff5').on('click',function(){
-        window.open('http://www.lightsandperfections.net/DEV_PROJECTS/AirWar3D/Alternativa_Test/bin-debug/Alternativa_Test.html','AirWar3D');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/AirWar/Alternativa_Test.html','AirWar3D');
     });
     $('#oldStuff6').on('click',function(){
-        window.open('http://www.lightsandperfections.net/DEV_PROJECTS/SYSTEMCREATOR/systemCreator.swf','sysCreate');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/SystemCreator/systemCreator.swf','sysCreate');
     });
     $('#oldStuff7').on('click',function(){
-        window.open('http://www.lightsandperfections.net/DEV_PROJECTS/PROJECTILE_PHYSICS/BattleShips.swf','physicsFun');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/Physics/BattleShips.html','physicsFun');
     });
     $('#oldStuff8').on('click',function(){
-        window.open('http://www.lightsandperfections.net/DEV_PROJECTS/UNITY/mattsTest.html','unity engine fun');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/UnityTestProject/mattsTest.html','unity engine fun');
     });
 
 
