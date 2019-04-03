@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Matt Sanders</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<script>
+    //google analytics tracking
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+            'ga');
+
+    ga('create', 'UA-40362794-1', 'mattsanders.org');
+    ga('send', 'pageview');
+</script>
+<script src="5grid/jquery.js"></script>
+<!-- 		<script src="5grid/init.js?mobileUI=1"></script> -->
+<script src="5grid/init.js?use=mobile,desktop,1000px,1200px,mobileUI=1"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!-- <script type="text/javascript" src="http://mbostock.github.io/d3/talk/20110921/d3/d3.geom.js"></script> -->
+<!-- <script type="text/javascript" src="http://mbostock.github.io/d3/talk/20110921/d3/d3.layout.js"></script> -->
+
+<script src="lib/d3.layout.cloud.js"></script>
+<script src="js/control.js"></script>
+<script src="js/barChart.js"></script>
+<script src="js/wordCloud.js"></script>
+<script src="js/map.js"></script>
+<script src="js/lineChart.js"></script>
+<script src="js/force.js"></script>
+<!-- Map Stuff -->
+<script src="lib/vectorMap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="lib/vectorMap/abstract-element.js"></script>
+<script src="lib/vectorMap/abstract-canvas-element.js"></script>
+<script src="lib/vectorMap/abstract-shape-element.js"></script>
+<script src="lib/vectorMap/svg-element.js"></script>
+<script src="lib/vectorMap/svg-group-element.js"></script>
+<script src="lib/vectorMap/svg-canvas-element.js"></script>
+<script src="lib/vectorMap/svg-shape-element.js"></script>
+<script src="lib/vectorMap/svg-path-element.js"></script>
+<script src="lib/vectorMap/svg-circle-element.js"></script>
+<script src="lib/vectorMap/vml-element.js"></script>
+<script src="lib/vectorMap/vml-group-element.js"></script>
+<script src="lib/vectorMap/vml-canvas-element.js"></script>
+<script src="lib/vectorMap/vml-shape-element.js"></script>
+<script src="lib/vectorMap/vml-path-element.js"></script>
+<script src="lib/vectorMap/vml-circle-element.js"></script>
+<script src="lib/vectorMap/vector-canvas.js"></script>
+<script src="lib/vectorMap/simple-scale.js"></script>
+<script src="lib/vectorMap/numeric-scale.js"></script>
+<script src="lib/vectorMap/ordinal-scale.js"></script>
+<script src="lib/vectorMap/color-scale.js"></script>
+<script src="lib/vectorMap/data-series.js"></script>
+<script src="lib/vectorMap/proj.js"></script>
+<script src="lib/vectorMap/world-map.js"></script>
+<script src="lib/vectorMap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="lib/vectorMap/jquery-jvectormap-us-aea-en.js"></script>
+<script src="lib/vectorMap/jquery-jvectormap-us-mill-en-3D.js"></script>
+<!-- <script src="lib/vectorMap/jquery-jvectormap-us-lcc-en.js"></script> -->
+<!-- <script src="lib/vectorMap/jquery-jvectormap-us-merc-en.js"></script> -->
+<!-- <script src="lib/vectorMap/jquery-jvectormap-us-mill-en.js"></script> -->
+
+<link rel="icon"
+      type="image/png"
+      href="images/favicon.ico">
+
+<link rel="stylesheet" media="all"
+    href="lib/vectorMap/jquery-jvectormap-1.2.2.css" />
+<!-- end map -->
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.css"/>
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css"/>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/docs.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/bar.css" />
+<link rel="stylesheet" href="css/lineChart.css"/>
+<link rel="stylesheet" href="css/force.css"/>
+<link rel="stylesheet" href="css/tooltip.css"/>
+</head>
+<body>
+<header id="main-header" >
+        <h1 class="mobileUI-site-name">Matt Sanders</h1>
+        <p>Portfolio:</p>
+</header>
+<div class="5grid-layout" style="position:relative">
+
+        <!-- Banner -->
+        <div class="row">
+            <div class="12u" style="">
+                <img src="http://www.lightsandperfections.net/wp-content/uploads/2013/01/cropped-beautiful-galaxy-218968.jpg" class="header-image" width="100%" height="250" alt="">
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="row">
+            <!-- Feature 1 -->
+            <div class="4u">
+                <div class="inner" id="feature1" style="height:300px;">
+                    <h2>D3:Bar Charts</h2>
+                    <svg style="-webkit-transform: translateZ(0)" id="barChart"></svg>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="4u">
+                <div class="inner" id="feature2" style="height:300px;">
+                    <h2>D3:Word Cloud</h2>
+                    <svg style="-webkit-transform: translateZ(0)" id="wordCloud"></svg>
+                </div>
+            </div>
+
+            <div class="4u">
+            <div class="inner" id="funFeature" style="height:300px;">
+                    <h2>D3:Bubble Category Tree &amp; Forces</h2>
+                    <svg style="-webkit-transform: translateZ(0)" id="canvas" ></svg>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- Main -->
+        <div class="row">
+            <!-- Feature 3 -->
+            <div class="12u" style="height:375px;">
+                <div class="inner" id="feature3">
+                    <h2>D3:Line Chart</h2>
+                    <svg style="-webkit-transform: translateZ(0)"  id="lineChart"></svg>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <!-- Content -->
+            <div class="12u">
+                <div class="inner">
+                    <h2>Jvector Maps</h2>
+                    <div style="display:table-row;">
+                        <div style="display:table-cell;" id="usBtn" class="btn"> US Map</div>
+                        <div style="display:table-cell;" id="isoBtn"class="btn">ISO US Map</div>
+                        <div style="display:table-cell;" id="worldBtn" class="btn">WORLD Map</div>
+                    </div>
+                    <div style="background-color: #fff; border-color: #e4e4e4; height: 375px" id="baseMap" class="base">
+                        <div id="contentMap" style="top: 2px; left: 0px; height: 375px;">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"><h3>Projects</h3></div>
+        <div class="row">
+            <div class="2u">
+                <div class="inner" id="oldStuff1" style="height:300px;">
+                    <h2>Broke City Music Player</h2>
+                    <img src="http://www.lightsandperfections.net/DEV_PROJECTS/MUSIC3D/assets/pics/brokeCity.jpg"/>
+                </div>
+            </div>
+            <div class="2u">
+                <div class="inner" id="oldStuff2" style="height:300px;">
+                    <h2>Audax Capacitor</h2>
+                    <img src="http://www.lightsandperfections.net/DEV_PROJECTS/Audax/Audax-logo.jpg"/>
+                </div>
+            </div>
+            <div class="2u">
+                <div class="inner" id="oldStuff3" style="height:300px;">
+                    <h2>Milton W. Sanders</h2>
+                    <img src="http://www.miltonwsanders.net/assets/pictures/Milt/thumb/thumb_milt_window.jpg"/>
+                </div>
+            </div>
+             <div class="2u">
+                <div class="inner" id="oldStuff6" style="height:300px;">
+                    <h2>System Creator</h2>
+                    <img src="http://www.lightsandperfections.net/DEV_PROJECTS/SYSTEMCREATOR/assets/ring-galaxy.jpg" height="300px"/>
+                </div>
+            </div>
+             <div class="2u">
+                <div class="inner" id="oldStuff7" style="height:300px;">
+                    <h2>Cannon Physics Game</h2>
+                    <img src="http://www.lightsandperfections.net/DEV_PROJECTS/PROJECTILE_PHYSICS/cannon.jpg" height="300px"/>
+                </div>
+            </div>
+             <div class="2u">
+                <div class="inner" id="oldStuff8" style="height:300px;">
+                    <h2>Unity Engine playground</h2>
+                    <img src="http://www.lightsandperfections.net/DEV_PROJECTS/UNITY/m1.jpg" height="300px"/>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="6u">
+                <div class="inner" id="oldStuff4" style="height:390px;">
+                    <h2>Air War Game (old version)</h2>
+                    <img src="http://www.lightsandperfections.net/fileRep/FB4_projects/persProjects/AircraftStrategyGame/bin-debug/assets/appImages/109inverted.jpg" height="390"/>
+                    *work in progress*
+                </div>
+            </div>
+            <div class="6u">
+                 <div class="inner" id="oldStuff5" style="height:390px;">
+                    <h2>Air War Game (new version)</h2>
+                    <img src="http://www.lightsandperfections.net/fileRep/FB4_projects/persProjects/AircraftStrategyGame/bin-debug/assets/appImages/spits_over_london.jpg" height="390"/>
+                    *work in progress*
+                </div>
+            </div>
+        </div>
+        <footer id="main-footer"> &copy; mattsanders.org </footer>
+
+</div>
+
+<div id="toolTip" class="tooltipLine" style="display:none;">TEST TOOLTIP</div>
+</body>
+</html>
+
