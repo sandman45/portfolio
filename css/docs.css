@@ -1,0 +1,238 @@
+/* Docs */
+
+	body
+	{
+		background: #F7F7F7;
+	}
+
+	body, input, select, textarea
+	{
+		font-family: Helvetica, sans-serif;
+		color: #444;
+		font-size: 11pt;
+	}
+
+	strong
+	{
+		color: #24292f;
+		font-weight: bold;
+	}
+
+	em
+	{
+		font-style: italic;
+	}
+
+	a
+	{
+		color: #B42D3A;
+		text-decoration: underline;
+	}
+
+	a:hover
+	{
+		text-decoration: none;
+	}
+
+	p
+	{
+		margin: 0 0 2em 0;
+	}
+
+	h2
+	{
+		font-size: 2em;
+		letter-spacing: -1px;
+		margin: 0 0 1.5em 0;
+		line-height: 1.2em;
+		color: #24292f;
+		font-weight: bold;
+	}
+
+	h3
+	{
+		font-size: 1.35em;
+		color: #24292f;
+		margin: 0 0 1em 0;
+		font-weight: bold;
+	}
+
+	ul
+	{
+		list-style: disc;
+	}
+
+	ol
+	{
+		list-style: decimal;
+	}
+
+	ul, ol
+	{
+		margin: 0 0 2em 1em;
+	}
+
+		ul li, ol li
+		{
+			padding-left: 0.5em;
+			margin-bottom: 0.75em;
+		}
+
+		ul li:last-child, ol li:last-child
+		{
+			margin-bottom: 0;
+		}
+		
+		ul > li > ul
+		{
+			margin: 0.5em 0 0.5em 0;
+		}
+
+	dl
+	{
+		margin-bottom: 2em;
+	}
+
+		dl dt
+		{
+			color: #24292f;
+			font-weight: bold;
+			margin: 0 0 1em 0;
+		}
+
+		dl dt code
+		{
+			margin: 0;
+			font-weight: normal;
+		}
+
+		dl dd
+		{
+			margin-left: 1em;
+			margin-bottom: 1.25em;
+		}
+
+		dl :last-child
+		{
+			margin-bottom: 0;
+		}
+
+	pre,code
+	{
+		background: #E7F2E1;
+		font-family: 'Courier New', fixed;
+		font-size: 1em;
+		border: dashed 1px #D1E0C9;
+	}
+
+	pre
+	{
+		padding: 1em;
+		margin: 0 0 2em 0;
+	}
+
+	code
+	{
+		padding: 0.25em;
+		margin: 0 0.3em 0 0.3em;
+	}
+
+	section
+	{
+		margin-bottom: 5em;
+	}
+
+	section :last-child
+	{
+		margin-bottom: 0;
+	}
+
+	section .button::after, section .button::before {
+		border-right-color: #fff;
+	}
+
+	.button
+	{
+		display: inline-block;
+		background: #B42D3A;
+		border-radius: 4px;
+		color: #fff;
+		text-decoration: none;
+		padding: 0.4em 1.5em 0.4em 1.5em;
+		transition: background-color .25s ease-in-out;
+		-moz-transition: background-color .25s ease-in-out;
+		-webkit-transition: background-color .25s ease-in-out;
+		outline: 0;
+	}
+
+	span.button
+	{
+		color: #a8a8a8;
+		background: #e4e4e4;
+		cursor: default;
+	}
+
+		a.button:hover
+		{
+			background: #C43D4A;
+		}
+	
+	.button-small
+	{
+		font-size: 0.8em;
+		line-height: 2em;
+		padding: 0em 0.75em 0em 0.75em;
+	}
+
+	.wrapper
+	{
+		width: 96%;
+		max-width: 1200px;
+		margin: 0 auto 0 auto;
+		padding: 0 2% 0 2%;
+	}
+
+	.wrapper > section
+	{
+		background: #fff;
+		margin-bottom: 20px;
+		line-height: 2em;
+		padding: 40px 30px 40px 30px;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.075);
+	}
+
+	header#main-header
+	{
+		text-align: center;
+		padding: 4em 0 2em 0;
+		margin: 0 0 1.5em 0;
+	}
+
+	header#main-header h1
+	{
+		font-size: 3em;
+		letter-spacing: -2px;
+		color: #24292F;
+		font-weight: bold;
+	}
+
+	header#main-header p
+	{
+		margin: 1.5em 0 0 0;
+		color: #888;
+	}
+
+	nav#main-nav
+	{
+		text-align: center;
+		padding: 0 0 3em 0;
+		line-height: 2.5em;
+	}
+
+	footer#main-footer
+	{
+		text-align: center;
+		margin: 3em 0 6em 0;
+		font-size: 0.8em;
+		color: #b4b4b4;
+	}

@@ -1,0 +1,76 @@
+/* 5grid */
+
+	#banner
+	{
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		background: #232B2D;
+/* 		background-image:url('http://localhost:8080/mattsanders/images/grungy_banner.jpg'); */
+/* 		background-size: 100% 100% ; */
+/* 		background-repeat:no-repeat; */
+/* 		background-position:center; */
+		color: #fff;
+		font-size: 2em;
+		border-radius: 0px;
+	}
+
+	#banner-wrapper
+	{
+		background: #3C4649;
+		padding: 1%;
+	}
+
+	#features-wrapper
+	{
+		background: #AAC99D;
+		padding: 1%;
+		margin-bottom: 1%;
+	}
+
+	.demo
+	{
+		background: #eee;
+		padding: 20px;
+		border: dashed 1px #bbb;
+		border-radius: 5px;
+		margin: 0 0 2em 0;
+		overflow: hidden;
+	}
+
+	.demo iframe
+	{
+		border: solid 1px #AFB7BA;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.multidemo iframe
+	{
+		float: left;
+		margin: 0;
+	}
+
+	.inner
+	{
+		padding: 2em;
+		line-height: 2em;
+	}
+
+	.inner :last-child
+	{
+		margin-bottom: 0;
+	}
+
+	.\35 grid .\31 u, .\35 grid .\32 u, .\35 grid .\33 u, .\35 grid .\34 u, .\35 grid .\35 u, .\35 grid .\36 u, .\35 grid .\37 u, .\35 grid .\38 u, .\35 grid .\39 u, .\35 grid .\31 0u, .\35 grid .\31 1u, .\35 grid .\31 2u
+	{
+		min-height: 60px;
+		background: #fff;
+		box-shadow: inset 0px 0px 0px 1px #bbb;
+		border-radius: 5px;
+	}
+
+	.demo-alt > div > div
+	{
+		box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5) !important;
+	}
