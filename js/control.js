@@ -28,7 +28,7 @@ $(document).ready(function(){
         window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/AirWar/Alternativa_Test.html','AirWar3D');
     });
     $('#oldStuff6').on('click',function(){
-        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/SystemCreator/systemCreator.swf','sysCreate');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/SystemCreator/index.html','sysCreate');
     });
     $('#oldStuff7').on('click',function(){
         window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/Physics/BattleShips.html','physicsFun');
