@@ -9,7 +9,6 @@ const port = 3000;
 app.use(express.static(indexPath));
 
 app.get('/', function(req,res) {
-  const indexPath = path.join(__dirname, '../');
   console.log('index path:' + indexPath);
   res.sendFile('index.html',{root: indexPath});
 });
