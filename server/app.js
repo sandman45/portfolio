@@ -1,11 +1,12 @@
 const express = require('express');
 
 const path = require('path');
+const indexPath = path.join(__dirname, '../');
 
 const app = express();
 const port = 3000;
 
-app.use(express.static('test'));
+app.use(express.static(indexPath));
 
 app.get('/', function(req,res) {
   const indexPath = path.join(__dirname, '../');
