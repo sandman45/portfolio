@@ -1,0 +1,1050 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>5grid - A simple and flexible grid-based HTML5+CSS3 framework.</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="../template/5grid/jquery.js"></script>
+		<script src="../template/5grid/init.js"></script>
+		<link rel="stylesheet" href="docs.css" />
+		<link rel="stylesheet" href="style.css" />
+		<style>
+
+			.\35 grid .\31 u, .\35 grid .\32 u, .\35 grid .\33 u, .\35 grid .\34 u, .\35 grid .\35 u, .\35 grid .\36 u, .\35 grid .\37 u, .\35 grid .\38 u, .\35 grid .\39 u, .\35 grid .\31 0u, .\35 grid .\31 1u, .\35 grid .\31 2u, .\35 grid .\31 u, .\35 grid .\32 u, .\35 grid .\33 u, .\35 grid .\34 u, .\35 grid .\35 u, .\35 grid .\36 u, .\35 grid .\37 u, .\35 grid .\38 u, .\35 grid .\39 u, .\35 grid .\31 0u, .\35 grid .\31 1u, .\35 grid .\31 2u {
+				line-height: 60px;
+				text-align: center;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<header id="main-header">
+			<h1>5grid 0.4.3</h1>
+			<p>A simple and flexible grid-based HTML5+CSS3 framework.</p>
+		</header>
+
+		<div class="wrapper">
+
+			<section>
+				<h2>What is 5grid?</h2>
+				<p><strong>5grid</strong> is a responsive HTML5+CSS3 design framework that features:</p>
+				<ul>
+					<li>A powerful grid system with a simple, concise syntax and numerous advanced features.</li>
+					<li>Strong HTML5 and CSS3 underpinnings.</li>
+					<li>Responsive handling with support for desktop, tablet, and mobile displays.</li>
+					<li>A slick, highly customizable mobile UI.</li>
+				</ul>
+				<p>5grid is licensed under the <a href="#license">MIT license and the GPLv2</a>. You can find the latest version <a href="http://n33.co/5grid/">here</a>.</p>
+				<ul>
+					<li><a href="#changelog">Changelog</a></li>
+					<li><a href="#files">Package Contents</a></li>
+					<li><a href="#overview">How it Works</a></li>
+					<li><a href="#started">Getting Started</a></li>
+					<li><a href="#basic">Basic Usage</a></li>
+					<li>
+						<a href="#advanced">Advanced Usage</a>
+						<ul>
+							<li><a href="#advanced-nesting">Nesting</a></li>
+							<li><a href="#advanced-multiple">Multiple</a></li>
+							<li><a href="#advanced-wrapping">Wrapping</a></li>
+							<li><a href="#advanced-offsets">Offsets</a></li>
+							<li><a href="#advanced-noscript">NoScript</a></li>
+							<li><a href="#advanced-flush">Flush Grids</a></li>
+						</ul>
+					</li>
+					<li><a href="#mobileui">Mobile UI</a></li>
+					<li><a href="#settings">Settings</a></li>
+					<li><a href="#demos">Demos</a></li>
+					<li><a href="#faq">Frequently Asked Questions</a></li>
+					<li><a href="#license">License</a></li>
+					<li><a href="#credits">Credits</a></li>
+				</ul>
+			</section>
+
+			<section id="changelog">
+				<h2>Changelog</h2>
+				<dl>
+					<dt>0.4.3</dt>
+					<dd>
+						<ul>
+							<li>Fix: Forced mobileUI_titleBarFixed = 0 on iOS &lt;= 5 </li>
+							<li>Fix: Fixed a very weird iOS bug that prevented stylesheets from loading on certain 3G connections.</li>
+						</ul>
+					</dd>
+					<dt>0.4.2</dt>
+					<dd>
+						<ul>
+							<li>Change: Upgraded to jQuery 1.9.1</li>
+							<li>Fix: Replaced <code>jQuery.browser</code> calls (deprecated as of jQuery 1.9+).</li>
+						</ul>
+					</dd>
+					<dt>0.4.1</dt>
+					<dd>
+						<ul>
+							<li>Fix: Fixed a bug that prevented mobile mode from triggering on some high PPI Android devices.</li>
+							<li>Fix: Added a workaround that fixes an orientation bug present in some stock Android browsers.</li>
+						</ul>
+					</dd>
+					<dt>0.4</dt>
+					<dd>
+						<ul>
+							<li>Feature: New default mobile UI theme ("modern").</li>
+							<li>Feature: Mobile UI now uses hardware acceleration (where available) for better performance.</li>
+							<li>Feature: Added <strong>mobileUI_slideSpeed</strong> setting.</li>
+							<li>Feature: Added <strong>mobileUI_hideAddressBar</strong> setting.</li>
+							<li>Feature: Added <strong>breakpoint_mobile</strong> and <strong>breakpoint_1000px</strong> settings.</li>
+							<li>Feature: Added <strong>viewport_is1000px</strong> and <strong>viewport_is1200px</strong> settings.</li>
+							<li>Feature: Added <em>fluid.psd</em> Photoshop template.</li>
+							<li>Fix: More accurate mobile UI touch events.</li>
+							<li>Fix: Moved settings to the top of <em>init.js</em> to make it easier to hardcode changes (note: you can still override via the <code>&lt;script&gt;</code> tag).</li>
+							<li>Fix: Fixed an Android-only mobile UI bug that caused the first nav link to activate as soon as the nav opened.</li>
+							<li>Change: Setting (formerly init option) delimiter is now an underscore instead of a period (note: legacy use of periods will still work fine).</li>
+						</ul>
+					</dd>
+					<dt>0.3.2</dt>
+					<dd>
+						<ul>
+							<li>Feature: Added <strong>5grid-flush</strong> modifier class.</li>
+							<li>Fix: IE7/8 support was broken under some circumstances (now corrected).</li>
+						</ul>
+					</dd>
+					<dt>0.3.1</dt>
+					<dd>
+						<ul>
+							<li>Feature: Added <strong>mobileUI.titleBarOverlaid</strong> init option.</li>
+							<li>Fix: Replaced all uses of <code>$</code> with <code>jQuery</code> (caused some conflicts w/WP).</li>
+							<li>Change: Mobile UI now uses <code>jQuery.html()</code> to obtain the site title.</li>
+						</ul>
+					</dd>
+					<dt>0.3</dt>
+					<dd>
+						<ul>
+							<li>Feature: Added the mobile UI (more on that <a href="#mobileui">here</a>).</li>
+							<li>Feature: Added offsets, which allows you to right-shift grid elements by any number of units (more on that <a href="#advanced-offsets">here</a>).</li>
+							<li>Fix: Standard <code>5grid</code> class now uses a much better clearing method that eliminates the need for <code>5grid-clear</code> while still providing the same functionality.</li>
+							<li>Fix: Mobile mode now correctly triggers on HD Android devices held in landscape.</li>
+							<li>Change: Body-level grids used to handle page layout should now be assigned the class <code>5grid-layout</code> instead of <code>5grid</code>. Nested grids can continue to use <code>5grid</code>.</li>
+							<li>Change: Discrete row DIVs using the <code>row</code> class are now used (<code>*-first</code> classes are now gone).</li>
+							<li>Change: Simplified loading code.</li>
+							<li>Change: jQuery is now required by the responsive handler and the mobile UI.</li>
+							<li>Removed: <code>5grid-alt</code>, <code>5grid-clear</code>, and <code>5grid-row</code>.</li>
+							<li>Removed: <code>css3-mediaqueries.js</code> (no longer needed).</li>
+						</ul>
+					</dd>
+					<dt>0.2</dt>
+					<dd>
+						<ul>
+							<li>Feature: Added <code>5grid-alt</code> and <code>5grid-clear</code> classes for alternate float clearing.</li>
+							<li>Fix: Made template and file naming a lot more coherent (responsive.css, responsive-1000px.css, and static.css).</li>
+							<li>Fix: (mobile) Moved <code>-webkit-text-size-adjust: none</code> from 5grid class to body.</li>
+							<li>Fix: (viewport.js) Changed tablet viewport width from <code>1024px</code> to <code>1080px</code> (to frame the page better on tablets).</li>
+							<li>Fix: (ie.js) Replaced HTML5shiv with minified version.</li>
+						</ul>
+					</dd>
+					<dt>0.1</dt>
+					<dd>Initial release.</dd>
+				</dl>
+			</section>
+			
+			<section id="files">
+				<h2>Package Contents</h2>
+				<p>Assuming you got the <a href="http://n33.co/5grid/">complete 5grid package</a>, here's what you'll find:</p>
+				<dl>
+					<dt>template/</dt>
+					<dd>Starting template for new 5grid projects (and where you'll find 5grid itself).</dd>
+					<dt>psds/</dt>
+					<dd>Photoshop templates (1000px, 1200px, and fluid (1366px)) with guides already set up to match 5grid's columns and gutters.
+					Handy if you want to create a 5grid-based design in Photoshop.</dd>
+					<dt>docs/</dt>
+					<dd>This documentation and numerous demos.</dd>
+				</dl>
+			</section>
+
+			<section id="overview">
+				<h2>How it Works</h2>
+				<p>5grid is comprised of two components: a <strong>grid system</strong> and a <strong>responsive handler</strong>.
+				
+				<section>
+					<h3>The Grid System</h3>
+					<p>Grid-based design is a two part design technique: the first part divides up a working canvas into a number of equally spaced, 
+					fixed-width vertical columns (usually 12 or 16, but almost any number works), which are then used as "scaffolding" 
+					to ensure page elements are consistently sized and aligned. The second part, and arguably the most beautiful, is
+					the CSS <strong>grid system</strong>, which lets a designer easily translate the underlying layout of their grid-based design
+					into completely functional HTML and CSS. This gives designers the freedom to put together
+					all kinds of complex layouts without having to worry about the CSS needed to get it working.</p>
+					
+					<p>5grid is, as its name implies, a grid-based design framework, and at its heart is its own CSS grid system.
+					Here's how it's set up:</p>
+
+					<ul>
+						<li>
+							Grids are divided up into <strong>12 vertical columns</strong> of equal width, with gutters (also of equal width) separating each one.
+						</li>
+						<li>
+							Each column represents a single <strong>unit</strong> of measurement.
+						</li>
+						<li>
+							<strong>Grid elements</strong> can be anywhere from 1 unit wide (<strong>1u</strong>) up to 12 units wide (<strong>12u</strong>).
+						</li>
+						<li>
+							Grid elements can be right-shifted by any number of units using <strong>offsets</strong> (more on that <a href="#advanced-offsets">here</a>).
+						</li>
+						<li>
+							Each <strong>grid row</strong> can have <strong>any number of grid elements</strong>, but the sum of their units (offsets included) <strong>must be less than or equal to 12</strong>.
+						</li>
+						<li>
+							A grid can be either a <strong>layout grid</strong>, which is used to dictate the overall layout of a
+							page, or a <strong>regular grid</strong>, which can be nested and used anywhere.
+						</li>
+					</ul>
+					
+					<p>So what makes 5grid's system unique? Two things: its super-minimal syntax (which you'll see down in <a href="#basic">Basic Usage</a>), and the
+					fact that it's designed to play nice with 5grid's other (very important) component ...</p>
+					
+				</section>
+				
+				<section>
+					<h3>The Responsive Handler</h3>
+					
+					<p>We're now at a point where folks do a good bit of browsing on small display devices like phones and tablets, but
+					at the same time use desktops and notebooks with increasingly wider displays. <strong>Responsive design</strong>
+					is a technique that automatically serves up your content with a stylesheet best suited for the display on which it's
+					being viewed. When done right, the end result is a design that can transparently adapt to all kinds of devices and display resolutions
+					while providing an optimal viewing experience across the board.</p>
+
+					<p>5grid includes a <strong>responsive handler</strong> to do just that: it first loads <em>style.css</em> (the global
+					stylesheet), and then decides which supported display mode (listed below) is best suited to the available screen width. Once
+					it's figured that out, it automatically loads the appropriate mode-specific stylesheet (in parentheses).</p>
+					
+					<dl>
+						<dt>1200px (<em>style-1200px.css</em>)</dt>
+						<dd>Targets widescreen desktops/notebooks. Layout grid widths are fixed at 1200px,
+						placing them safely below the most popular widescreen resolution (1366x768) while still
+						giving them plenty of room to breathe.</dd>
+						<dt>1000px (<em>style-1000px.css</em>)</dt>
+						<dd>Targets tablets and lower-resolution desktops/notebooks. Layout grid widths are fixed at 1000px,
+						which is optimal for almost all tablets (10" and smaller) while still safely below the resolution
+						that just doesn't seem to die (1024x768).</dd>
+						<dt>desktop (<em>style-desktop.css</em>)</dt>
+						<dd>Targets <strong>all</strong> desktop sizes. Handy if you've already designed things
+						in such a way that you don't need completely separate stylesheets for 1000px and 1200px. It can, however,
+						be used in conjunction with <strong>1000px</strong> and/or <strong>1200px</strong> to load additional
+						stylesheets targeting each of those specific modes.</dd>
+						<dt>mobile (<em>style-mobile.css</em>)</dt>
+						<dd>Targets mobile devices (primarily phones). This mode differs from
+						the others in that each grid element is forced to its own row (which sounds a bit weird at first, but the result is a significantly better experience on small/narrow displays).
+						All grid widths are also fluid to elegantly handle both portrait/landscape viewing and the ridiculous number of screen resolutions
+						found on mobile devices. <strong>As of version 0.3</strong>, this mode also has an optional and very customizable mobile UI with a fixed titlebar and a cool slide-out navigation panel (more on that <a href="#mobileui">here</a>).</dd>
+						<dt>fluid (<em>style-fluid.css</em>)</dt>
+						<dd>This is a special desktop/notebook mode that sets layout grid widths to fluid, which is handy
+						if you need to go with a truly fluid layout. Note that this mode can
+						<strong>only</strong> be used on its own or in conjunction with <strong>mobile</strong>.</dd>
+					</dl>
+					
+					<p><strong>Note:</strong> While the responsive handler is really cool, designing a properly responsive design does take
+					a bit more work due to the additional stylesheets. If that's not something you want to get into just yet, you do have 
+					the option to initially skip the responsive handler entirely (see <a href="#started">Getting Started</a>).</p>
+					
+				</section>
+				
+			</section>
+
+			<section id="started">
+				<h2>Getting Started</h2>
+
+				<p>It's real simple:</p>
+				<ol>
+					<li>Make a copy of the <em>template/</em> folder and rename it to something else. This will be your work folder.</li>
+					<li>
+						<p>(Optional) Override 5grid's default <a href="#settings">settings</a>. You can do this by either directly editing the first section of <em>5grid/init.js</em>
+						or by passing custom settings to its <code>&lt;script&gt;</code> tag in standard query format. For example:
+						<pre>&lt;script src="5grid/init.js?use=mobile,1200px&amp;mobileUI=1"&gt;&lt;/script&gt;</pre>
+					</li>
+					<li>
+						<p>You're done &ndash; onward to <a href="#basic">Basic Usage</a>!</p>
+					</li>
+				</ol>
+				
+			</section>
+			
+			<section id="basic">
+				<h2>Basic Usage</h2>
+				<p>Creating a grid is really straightforward. Here's the basic syntax:</p>
+<pre>&lt;div class="5grid"&gt;
+  &lt;!-- Row 1 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="[width]u"&gt;...&lt;/div&gt;
+      &lt;div class="[width]u"&gt;...&lt;/div&gt;
+      &lt;div class="[width]u"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+    ...
+  &lt;!-- Row 2 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="[width]u"&gt;...&lt;/div&gt;
+      &lt;div class="[width]u"&gt;...&lt;/div&gt;
+      &lt;div class="[width]u"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  ...
+&lt;/div&gt;</pre>
+				<p>Which breaks down like this:</p>
+				<dl>
+					<dt><code>&lt;div class="5grid"&gt;</code></dt>
+					<dd>Starts a new <strong>grid</strong>. If this grid is going to be a <strong>layout grid</strong> (ie. you'll be using 
+					it for your page layout), you'll want to use <code>&lt;div class="5grid-layout"&gt;</code> instead.</dd>
+					<dt><code>&lt;div class="row"&gt;</code></dt>
+					<dd>Starts a new <strong>grid row</strong>.</dd>
+					<dt><code>&lt;div class="[width]u"&gt;...&lt;/div&gt;</code>
+					<dd>Defines a <strong>grid element</strong> of <code>[width]</code> units (between 1 and 12). Each row
+					can have any number of these provided the <strong>sum</strong> of their units are less than or equal to 12.</dd>
+				</dl>
+
+				<p>So, how about a few sample grids?</p>
+				
+				<section>
+					<h3>1 Row (8u+4u)</h3>
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="8u"&gt;8u&lt;/div&gt;
+    &lt;div class="4u"&gt;4u&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid">
+									<div class="row">
+										<div class="8u">8u</div>
+										<div class="4u">2u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</section>
+
+				<section>
+					<h3>2 Rows (3u+6u+3u, 4u+4u+4u)</h3>
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid-layout"&gt;
+  &lt;!-- Row 1 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="3u"&gt;3u&lt;/div&gt;
+      &lt;div class="6u"&gt;6u&lt;/div&gt;
+      &lt;div class="3u"&gt;3u&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;!-- Row 2 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid">
+									<div class="row">
+										<div class="3u">3u</div>
+										<div class="6u">6u</div>
+										<div class="3u">3u</div>
+									</div>
+									<div class="row">
+										<div class="4u">4u</div>
+										<div class="4u">4u</div>
+										<div class="4u">4u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</section>
+
+				<section>
+					<h3>4 Rows (12u, 3u+9u, 6u+6u, 6u+6u)</h3>
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid-layout"&gt;
+  &lt;!-- Row 1 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="12u"&gt;12u&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;!-- Row 2 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="3u"&gt;3u&lt;/div&gt;
+      &lt;div class="9u"&gt;9u&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;!-- Row 3 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="6u"&gt;6u&lt;/div&gt;
+      &lt;div class="6u"&gt;6u&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;!-- Row 4 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="6u"&gt;6u&lt;/div&gt;
+      &lt;div class="6u"&gt;6u&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid">
+									<div class="row">
+										<div class="12u">12u</div>
+									</div>
+									<div class="row">
+										<div class="3u">3u</div>
+										<div class="9u">9u</div>
+									</div>
+									<div class="row">
+										<div class="6u">6u</div>
+										<div class="6u">6u</div>
+									</div>
+									<div class="row">
+										<div class="6u">6u</div>
+										<div class="6u">6u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</section>
+				
+				<p>... you get the idea. Check out the bundled <a href="#demos">demos</a> for even more sample grids.</p>
+
+			</section>
+
+			<section id="advanced">
+				<h2>Advanced Usage</h2>
+				<p>5grid's grid system was designed to be simple and lightweight, but it's still capable of handling some pretty sophisticated (and sometimes unusual) use cases:</p>
+				<section id="advanced-nesting">
+					<h3>Nesting</h3>
+					<p>Let's say you have the following grid:</p>
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="9u"&gt;9u&lt;/div&gt;
+    &lt;div class="3u"&gt;3u&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid">
+									<div class="row">
+										<div class="9u">9u</div>
+										<div class="3u">3u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<p>And you decide you want to partition the 9u element into three 3u elements, <strong>but as children of the 9u element</strong>.
+					You can do this with <strong>nesting</strong>, which allows you to place <strong>regular grids</strong> inside any grid element.
+					In this case, we'll need to place a grid with a row of three 4u elements to get the desired effect. Here's the result:</p>
+
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="9u"&gt;
+      &lt;div class="5grid"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="4u"&gt;4u&lt;/div&gt;
+          &lt;div class="4u"&gt;4u&lt;/div&gt;
+          &lt;div class="4u"&gt;4u&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="3u"&gt;3u&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid">
+									<div class="row">
+										<div class="9u">
+											<div class="5grid">
+												<div class="row">
+													<div class="4u">4u</div>
+													<div class="4u">4u</div>
+													<div class="4u">4u</div>
+												</div>
+											</div>
+										</div>
+										<div class="3u">3u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+
+					<p>You can also multi-nest and nest complex grids, like this crazyass example:</p>
+					<div class="demo">
+						<div class="5grid">
+							<div class="row">
+								<div class="9u">
+									<div class="5grid">
+										<div class="row">
+											<div class="2u">2u</div>
+											<div class="8u">
+												<div class="5grid">
+													<div class="row">
+														<div class="12u">12u</div>
+													</div>
+													<div class="row">
+														<div class="4u">4u</div>
+														<div class="4u">4u</div>
+														<div class="4u">4u</div>
+													</div>
+													<div class="row">
+														<div class="6u">6u</div>
+														<div class="6u">6u</div>
+													</div>
+													<div class="row">
+														<div class="12u">12u</div>
+													</div>
+												</div>
+											</div>
+											<div class="2u">2u</div>
+										</div>
+									</div>
+								</div>
+								<div class="3u">
+									<div class="5grid">
+										<div class="row">
+											<div class="4u">4u</div>
+											<div class="4u">4u</div>
+											<div class="4u">4u</div>
+										</div>
+										<div class="row">
+											<div class="6u">6u</div>
+											<div class="6u">6u</div>
+										</div>
+										<div class="row">
+											<div class="8u">8u</div>
+											<div class="4u">4u</div>
+										</div>
+										<div class="row">
+											<div class="4u">4u</div>
+											<div class="8u">8u</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="advanced-multiple">
+					<h3>Multiple grids</h3>
+					<p>Grids in 5grid are designed to work independently, so having multiple grids on the same page, like this:</p>
+
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="12u"&gt;12u&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="4u"&gt;4u&lt;/div&gt;
+    &lt;div class="4u"&gt;4u&lt;/div&gt;
+    &lt;div class="4u"&gt;4u&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="9u"&gt;9u&lt;/div&gt;
+    &lt;div class="3u"&gt;3u&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid">
+									<div class="row">
+										<div class="12u">12u</div>
+									</div>
+								</div>
+								<div class="5grid">
+									<div class="row">
+										<div class="4u">4u</div>
+										<div class="4u">4u</div>
+										<div class="4u">4u</div>
+									</div>
+								</div>
+								<div class="5grid">
+									<div class="row">
+										<div class="9u">9u</div>
+										<div class="3u">3u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+
+					<p>is totally fine. This particular "feature" can come in handy in a number of situations, the most obvious being ...</p>
+				</section>
+				<section id="advanced-wrapping">
+					<h3>Wrapping</h3>
+					<p>Since grids can work independently, you're free to wrap them in other elements when necessary. For example, a common
+					design technique is to wrap a fixed width element inside a 100% width background element, like so:</p>
+
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div id="banner-wrapper"&gt;
+  &lt;div class="5grid-layout"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="12u"&gt;12u&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="features-wrapper"&gt;
+  &lt;div class="5grid-layout"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="9u"&gt;9u&lt;/div&gt;
+    &lt;div class="3u"&gt;3u&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div id="banner-wrapper">
+									<div class="5grid">
+										<div class="row">
+											<div class="12u">12u</div>
+										</div>
+									</div>
+								</div>
+								<div id="features-wrapper">
+									<div class="5grid">
+										<div class="row">
+											<div class="4u">4u</div>
+											<div class="4u">4u</div>
+											<div class="4u">4u</div>
+										</div>
+									</div>
+								</div>
+								<div class="5grid">
+									<div class="row">
+										<div class="9u">9u</div>
+										<div class="3u">3u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+
+					<p>You can see a full demo of this particular example <a href="demo-typical2.html">here</a>.</p>
+				</section>
+				<section id="advanced-offsets">
+					<h3>Offsets</h3>
+					<p>Offsets let you right-shift grid elements by any number of grid units, like so:</p>
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid-layout"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="3u offset-9u"&gt;4u (offset by 9)&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="3u offset-5u"&gt;3u (offset by 5)&lt;/div&gt;
+    &lt;div class="3u offset-1u"&gt;3u (offset by 1)&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="3u offset-1u"&gt;3u (offset by 1)&lt;/div&gt;
+    &lt;div class="3u offset-1u"&gt;3u (offset by 1)&lt;/div&gt;
+    &lt;div class="3u offset-1u"&gt;3u (offset by 1)&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid">
+									<div class="row">
+										<div class="3u offset-9u">4u (offset by 9)</div>
+									</div>
+									<div class="row">
+										<div class="3u offset-5u">3u (offset by 5)</div>
+										<div class="3u offset-1u">3u (offset by 1)</div>
+									</div>
+									<div class="row">
+										<div class="3u offset-1u">3u (offset by 1)</div>
+										<div class="3u offset-1u">3u (offset by 1)</div>
+										<div class="3u offset-1u">3u (offset by 1)</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<p>You can see a full (somewhat insane) demo of this particular example <a href="demo-offsets.html">here</a>.</p>
+				</section>
+				<section id="advanced-noscript">
+					<h3>NoScript</h3>
+					<p>5grid needs JS to do its thing, so if you're expecting some of your users to have it disabled add the following 
+					to your <code>&lt;head&gt;</code>
+					container to manually load in your stylesheets in those situations:</p>
+<pre>&lt;noscript&gt;
+  &lt;link rel="stylesheet" href="5grid/core.css" /&gt;
+  &lt;link rel="stylesheet" href="5grid/core-desktop.css" /&gt;
+  &lt;link rel="stylesheet" href="5grid/core-<em>(1000px or 1200px)</em>.css" /&gt;
+  &lt;link rel="stylesheet" href="5grid/core-noscript.css" /&gt;
+  &lt;link rel="stylesheet" href="style.css" /&gt;
+  ... (link tags to your desktop, 1000px, and/or 1200px stylesheets) ...
+&lt;/noscript&gt;</pre>
+					<p>Note that the responsive handler won't work if JS is disabled, so you'll
+					need to select the mode to use (desktop 1000px or desktop 1200px) by 
+					including the appropriate stylesheets. For example, the following 
+					will make NoScript users default to the <strong>desktop 1200px</strong> mode (relevant lines are in bold):</p>
+<pre>&lt;noscript&gt;
+  &lt;link rel="stylesheet" href="5grid/core.css" /&gt;
+  &lt;link rel="stylesheet" href="5grid/core-desktop.css" /&gt;
+  <strong>&lt;link rel="stylesheet" href="5grid/core-1200px.css" /&gt;</strong>
+  &lt;link rel="stylesheet" href="5grid/core-noscript.css" /&gt;
+  &lt;link rel="stylesheet" href="style.css" /&gt;
+  <strong>&lt;link rel="stylesheet" href="style-desktop.css" /&gt;</strong>
+&lt;/noscript&gt;</pre>
+				</section>
+				<section id="advanced-flush">
+					<h3>Flush Grids</h3>
+					<p>To create a flush (gutterless) grid, simply add the <code>5grid-flush</code> modifier class to your grid:</p>
+					<dl>
+						<dt>Code:</dt>
+						<dd>
+<pre>&lt;div class="5grid 5grid-flush"&gt;
+  &lt;!-- Row 1 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="3u"&gt;3u&lt;/div&gt;
+      &lt;div class="6u"&gt;6u&lt;/div&gt;
+      &lt;div class="3u"&gt;3u&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;!-- Row 2 --&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+      &lt;div class="4u"&gt;4u&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+						</dd>
+						<dt>Output:</dt>
+						<dd>
+							<div class="demo">
+								<div class="5grid 5grid-flush">
+									<div class="row">
+										<div class="3u">3u</div>
+										<div class="6u">6u</div>
+										<div class="3u">3u</div>
+									</div>
+									<div class="row">
+										<div class="4u">4u</div>
+										<div class="4u">4u</div>
+										<div class="4u">4u</div>
+									</div>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</section>
+			</section>
+
+			<section id="mobileui">
+				<h2>Mobile UI</h2>
+				<h3>What is it?</h3>
+				<p>The mobile UI is an optional, customizable interface that makes getting around your site much easier
+				on mobile devices. It's made up of two components:</p>
+				<dl>
+					<dt>Title Bar</dt>
+					<dd>A horizontal bar fixed at the top of the screen with your site's name and a button to activate the ...</dd>
+					<dt>Navigation panel</dt>
+					<dd>A navigation panel that slides out of the left side of the screen when activated.</dd>
+				</dl>
+				<h3>Enabling the mobile UI</h3>
+				<ol>
+					<li>
+						<p><a href="#settings">Set</a> <strong>mobileUI</strong> to <em>1</em>.</p>
+					</li>
+					<li>
+						<p>Add the class <code>mobileUI-site-name</code> to the element containing your site's name (so 5grid knows where to find it). For example:</p>
+						<pre>&lt;h1 class="mobileUI-site-name"&gt;Placeholder&lt;/h1&gt;</pre>
+					</li>
+					<li>
+						<p>Similar deal here: add the class <code>mobileUI-site-nav</code> to the element with your site's main navigation links. For example:</p>
+						<pre>&lt;nav class="mobileUI-site-nav"&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;Services&lt;/a&gt;
+  &lt;a href="#"&gt;Portfolio&lt;/a&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</pre>
+						<p>Note that your main navigation can be in <strong>any</strong> structure, even multi-level ones like this:</p>
+						<pre>&lt;nav class="mobileUI-site-nav"&gt;
+  &lt;ul&gt;
+    &lt;li class="current_page_item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;Services&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Service 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Service 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Service 3&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+					</li>
+				</ol>
+				<p>And that's it! Here's how it'll look (using the default Modern theme and the default color palette):</p>
+				<div class="demo">
+					<iframe src="sample-mobileui0.html" width="440" height="450"></iframe>
+				</div>
+				<p>You can also tweak the look and behavior of the mobile UI using a number of <a href="#settings">settings</a>.</p>
+				<h3>Classes</h3>
+				<p>There are a handful of classes you can assign to your page elements to give them special meaning to the mobile UI:</p>
+				<dl>
+					<dt>mobileUI-site-name</dt>
+					<dd>Marks the element containing your site name (obtained with <code>jQuery.html()</code>).</dd>
+					<dt>mobileUI-site-nav</dt>
+					<dd>Marks the element containing your main navigation links. The mobile UI will copy <strong>all</strong> anchor elements it finds in this element to the navigation panel.</dd>
+					<dt>mobileUI-main-content</dt>
+					<dd>Marks the parent element of your main content. If used, the mobile UI will shift this element to the <strong>top</strong> of its parent element.
+					This is useful if, due to layout reasons, your main content is below other content in your HTML.</dd>
+					<dt>mobileUI-main-content-destination</dt>
+					<dd>Optionally used in conjunction with <strong>mobileUI-main-content</strong>. Instead of moving your main content to the top of its parent element,
+					it'll be moved to the top of this element instead.</dd>
+				</dl>
+				<h3>Custom Styling</h3>
+				<p>If you don't want to use the built-in themes, here's how to add your own custom styling to the mobile UI:</p>
+				<ol>
+					<li>
+						<p><a href="#settings">Set</a> <strong>mobileUI_theme</strong> to <em>none</em>.</p>
+					</li>
+					<li>
+						<p>Apply your own styles to the following in <em>style-mobile.css</em>:</p>
+						<dl>
+							<dt>#mobileUI-site-titlebar</dt>
+							<dd>The titlebar.</dd>
+							<dt>#mobileUI-site-title</dt>
+							<dd>The title.</dd>
+							<dt>#mobileUI-site-nav-opener / #mobileUI-site-nav-opener:active</dt>
+							<dd>The navigation panel's opener button (normal and active states).</dd>
+							<dt>#mobileUI-site-nav</dt>
+							<dd>The navigation panel itself.</dd>
+							<dt>#mobileUI-site-nav-inner</dt>
+							<dd>The navigation panel's inner element (wraps the links).</dd>
+							<dt>.mobileUI-site-nav-link</dt>
+							<dd>A navigation panel links.</dd>
+						</dl>
+					</li>
+					<li>
+						<p>(Optional) If your styles change the width of the navigation panel opener, be sure to update 
+						<strong>mobileUI_openerWidth</strong> accordingly.</p>
+					</li>
+					<li>You're done!</li>
+				</ol>
+				<h3>Examples</h3>
+				<p>And here are a few examples of the mobile UI in action:</p>
+				<div class="demo multidemo">
+					<iframe src="sample-mobileui1.html" width="355" height="450"></iframe>
+					<iframe src="sample-mobileui2.html" width="355" height="450"></iframe>
+					<iframe src="sample-mobileui3.html" width="355" height="450"></iframe>
+				</div>
+			</section>
+
+			<section id="settings">
+				<h2>Settings</h2>
+				<h3>Using Settings</h3>
+				<p>5grid uses an assortment of (purely optional) settings to dictate how it does its thing. Should the defaults not
+				be to your liking, there are two ways you can put your own settings to use:</p>
+				<dl>
+					<dt>Edit <em>5grid/init.js</em></dt>
+					<dd>Pretty straightforward: open <em>5grid/init.js</em> in a text editor, jump to the first section
+					marked <strong>Settings</strong> and have at it. Just remember to copy these out if you upgrade
+					5grid down the road.</dd>
+					<dt>Add a query string to the <code>&lt;script&gt;</code> tag</dt>
+					<dd><p>You can add a standard query string to the <em>5grid/init.js</em> <code>&lt;script&gt;</code> tag
+					with as many settings as you like. For example:</p>
+					<pre>&lt;script src="5grid/init.js?use=mobile,1200px&amp;mobileUI=1"&gt;&lt;/script&gt;</pre>
+					</dd>
+				</dl>
+				<h3>The Settings</h3>
+				<dl>
+					<dt>use</dt>
+					<dd>A comma-separated list of responsive modes to support (valid choices are any combination of <em>mobile</em>, <em>desktop</em>,
+					<em>1000px</em>, <em>1200px</em>, and <em>fluid</em>; default is <em>mobile,desktop</em>).
+					Specifying a single mode (eg. <em>1000px</em>) will effectively disable 5grid's responsive handler, which can be pretty handy
+					if you're not quite ready to jump into responsive design.</dd>
+					<dt>prefix</dt>
+					<dd>Stylesheet prefix (default is <em>style</em>). Used as the prefix for <strong>all</strong> of 5grid's stylesheets
+					(eg. <em><strong>style</strong>.css</em>, <em><strong>style</strong>-1000px.css</em>, etc.)</dd>
+					<dt>breakpoint_1000px</dt>
+					<dd>Maximum screen width (in pixels) at which 1000px mode kicks in (default is <em>1200</em>).</dd>
+					<dt>breakpoint_mobile</dt>
+					<dd>Maximum screen width (in pixels) at which mobile mode kicks in (default is <em>480</em>).</dd>
+					<dt>viewport_is1000px</dt>
+					<dd>When in 1000px mode, page width to report to browsers that recognize the <code>viewport</code> meta tag (default is <em>1040</em>).</dd>
+					<dt>viewport_is1200px</dt>
+					<dd>When in 1200px mode, page width to report to browsers that recognize the <code>viewport</code> meta tag (default is <em>1280</em>).</dd>
+					<dt>mobileUI</dt>
+					<dd>Toggles the mobile UI on or off (can be <em>0</em> for disabled, <em>1</em> for enabled; default is <em>0</em>).</dd>
+					<dt>mobileUI_hideAddressBar</dt>
+					<dd>(iOS only) Automatically hides the browser address bar on page load (can be <em>0</em> for disabled, <em>1</em> for enabled; default is <em>0</em>).</dd>
+					<dt>mobileUI_openerText</dt>
+					<dd>Text to show on the opener (default is <em>=</em>).</dd>
+					<dt>mobileUI_openerWidth</dt>
+					<dd>Width of the mobile UI opener button in pixels (default is <em>60</em>). This is used to determine the "gap" to leave on the right-hand
+					side of the screen when the navigation panel is open.</dd>
+					<dt>mobileUI_slideSpeed</dt>
+					<dd>Speed (in ms) at which the navigation panel opens (can be any ms value or <em>0</em> for instant; default is <em>200</em>).</dd>
+					<dt>mobileUI_theme</dt>
+					<dd>Selects the built-in theme to use (can be <em>modern</em>, <em>beveled</em>, <em>flat</em>, or <em>none</em> (if you want to completely style it yourself &ndash; see next section); default is <em>modern</em>).</dd>
+					<dt>mobileUI_themeNavColor</dt>
+					<dd>(when using a theme) Color of the mobile UI's navigation panel color (can be any valid color code; default is <em>#272727</em>).</dd>
+					<dt>mobileUI_themeTitleBarColor</dt>
+					<dd>(when using a theme) Color of the mobile UI's titlebar (can be any valid color code; default is <em>#444444</em>).</dd>
+					<dt>mobileUI_titleBarFixed</dt>
+					<dd>Determines if the mobile UI titlebar should be visible at all times (can be <em>0</em> for no, <em>1</em> for yes; default is <em>1</em>).</dd>
+					<dt>mobileUI_titleBarHeight</dt>
+					<dd>Height of the mobile UI titlebar in pixels (default is <em>44</em>).</dd>
+					<dt>mobileUI_titleBarOverlaid</dt>
+					<dd>Determines if the mobile UI titlebar should overlay the content (can be <em>0</em> for no, <em>1</em> for yes; default is <em>0</em>).</dd>
+				</dl>
+			</section>
+
+			<section id="demos">
+				<h2>Demos</h2>
+				<p>The best way to learn how 5grid works is to see it in action, so I've put together a few demos
+				to show it tackling some typical (and some not so typical) use cases:
+				<dl>
+					<dt><a href="demo-everything.html">Everything</a></dt>
+					<dd>All possible unit sizes in one gigantic grid.</dd>
+					<dt><a href="demo-everything-fluid.html">Everything (Fluid)</a></dt>
+					<dd>All possible unit sizes in one gigantic (fluid) grid.</dd>
+					<dt><a href="demo-everything-flush.html">Everything (Flush)</a></dt>
+					<dd>All possible unit sizes in one gigantic (<a href="#advanced-flush">flush</a>) grid.</dd>
+					<dt><a href="demo-offsets.html">Offsets</a></dt>
+					<dd>An (interesting) demonstration of offsets.</dd>
+					<dt><a href="demo-2column1.html">2Column1</a></dt>
+					<dd>8u content area (left), 4u sidebar (right).</dd>
+					<dt><a href="demo-2column2.html">2Column2</a></dt>
+					<dd>4u sidebar (left), 8u content area (right).</dd>
+					<dt><a href="demo-3column1.html">3Column1</a></dt>
+					<dd>3u sidebar (left), 6u content area (center), 3u sidebar (right).</dd>
+					<dt><a href="demo-3column2.html">3Column2</a></dt>
+					<dd>4u content area (left), 4u content area (center), 4u content area (right).</dd>
+					<dt><a href="demo-typical1.html">Typical1</a></dt>
+					<dd>A typical page layout.</dd>
+					<dt><a href="demo-typical2.html">Typical2</a></dt>
+					<dd>A typical page layout with multiple <a href="#advanced-wrapping">wrapped</a> grids.</dd>
+				</dl>
+			</section>
+
+			<section id="faq">
+				<h2>Frequently Asked Questions</h2>
+				<dl>
+					<dt>How do I test the other display modes?</dt>
+					<dd>Resize your browser window (either up or down), then <strong>refresh</strong> the page.</dd>
+				</dl>
+				<dl>
+					<dt>I'm testing my 5grid project in Internet Explorer and it's asking me to explicitly allow scripting &ndash; WTF?
+					Are all my IE users going to have to deal with this?</dt>
+					<dd>Don't panic! IE's default security policy for files in the <strong>Local Machine Zone</strong> (ie. ones on your own hard drive) doesn't
+					allow them to use scripting which, as you've already noticed, is needed by 5grid to work. However, since this only affects
+					<strong>local</strong> files, the message won't appear to anyone viewing your stuff on an actual website (which, in IE terminology, falls
+					under the more relaxed <strong>Internet Zone</strong>). So stay calm, click <strong>Allow</strong>, and carry on.</dd>
+				</dl>
+			</section>
+			
+			<section id="license">
+				<h2>License</h2>
+				<p>5grid is licensed under the MIT license and the GPLv2.</p>
+				<section>
+					<h3>MIT license</h3>
+					<p>Copyright (c) 2012 n33, <a href="http://n33.co/">http://n33.co/</a></p>
+					<p>Permission is hereby granted, free of charge, to any person
+					obtaining a copy of this software and associated documentation
+					files (the "Software"), to deal in the Software without
+					restriction, including without limitation the rights to use,
+					copy, modify, merge, publish, distribute, sublicense, and/or sell
+					copies of the Software, and to permit persons to whom the
+					Software is furnished to do so, subject to the following
+					conditions:</p>
+					<p>The above copyright notice and this permission notice shall be
+					included in all copies or substantial portions of the Software.</p>
+					<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+					EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+					OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+					NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+					HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+					WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+					FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+					OTHER DEALINGS IN THE SOFTWARE.</p>
+				</section>
+				<section>
+					<h3>GPLv2 license</h3>
+					<p>Copyright (c) 2012 n33, <a href="http://n33.co/">http://n33.co/</a></p>
+					<p>This program is free software: you can redistribute it and/or modify it
+					under the terms of the GNU General Public License as published by the Free 
+					Software Foundation, either version 2 of the License, or (at your option) 
+					any later version.</p>
+					<p>This program is distributed in the hope that it will be useful, but 
+					WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+					or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License 
+					for more details.</p>
+					<p>You should have received a copy of the GNU General Public License along 
+					with this program. If not, see <a href="http://www.gnu.org/licenses/gpl-2.0.html">http://www.gnu.org/licenses/gpl-2.0.html</a>.</p>
+				</section>
+			</section>
+
+			<section id="credits">
+				<h2>Credits</h2>
+				<dl>
+					<dt>CSS Resets by Eric Meyer (used in core.css)</dt>
+					<dd><a href="http://meyerweb.com/eric/tools/css/reset/">http://meyerweb.com/eric/tools/css/reset/</a></dd>
+					<dt>HTML5 Shiv by @afarkas @jdalton @jon_neal @rem (html5shiv.js)</dt>
+					<dd><a href="http://code.google.com/p/html5shiv/">http://code.google.com/p/html5shiv/</a></dd>
+					<dt>jQuery resize event by Ben Alman @cowboy (used by the mobile UI)</dt>
+					<dd><a href="http://benalman.com/projects/jquery-resize-plugin/">http://benalman.com/projects/jquery-resize-plugin/</a></dd>
+				</dl>
+				<p>Got a bug report, question, or suggestion? Email me (aj -at- n33.co) or find me on Twitter (<a href="http://twitter.com/n33co/">@n33co</a>).</p>
+			</section>
+
+		</div>
+
+		<footer id="main-footer">
+			&copy; n33
+		</footer>
+
+	</body>
+</html>
