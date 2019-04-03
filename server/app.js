@@ -9,7 +9,7 @@ app.use(express.static('test'));
 
 app.get('/', function(req,res) {
   const indexPath = path.join(__dirname, '../');
-  console.log(`{$indexPath}`);
+  console.log('index path:' + indexPath);
   res.sendFile('index.html',{root: indexPath});
 });
 
