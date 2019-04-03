@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 
     $('#oldStuff1').on('click',function(){
-        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/BrokeCityPlayer/Music3D.swf','Broke City','width=900,height=450');
+        window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/BrokeCityPlayer/index.html','Broke City','width=900,height=450');
     });
     $('#oldStuff2').on('click',function(){
         window.open('https://s3-us-west-2.amazonaws.com/mattsanders-portfolio/Audax/index.html','Audax Capacitor','width=500,height=450');
